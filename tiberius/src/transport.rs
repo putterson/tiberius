@@ -233,8 +233,8 @@ pub mod tls {
                 use transport::tls::native_tls::backend::openssl::TlsConnectorBuilderExt;
                 builder
                     .builder_mut()
-                    .builder_mut()
-                    .set_verify(openssl::ssl::SSL_VERIFY_NONE);
+                    .builder_mut();
+                    //.set_verify(openssl::ssl::SSL_VERIFY_NONE);
             }
             if panic {
                 panic!("disabling cert verification is not supported for this target");
